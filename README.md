@@ -1,5 +1,7 @@
 # python-type-valid
 
+![Python type valid Build passed](https://travis-ci.org/edmhs/python-type-valid.svg?branch=master)
+
 Python type validation decorator with hinting
 
 ### Installation
