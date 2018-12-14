@@ -21,15 +21,15 @@ class TestTypeValid(unittest.TestCase):
 
     def test_string_invalid_int(self):
         with self.assertRaises(TypeError):
-            a = self.name_str(1)
+            self.name_str(username=1)
 
     def test_string_invalid_bool(self):
         with self.assertRaises(TypeError):
-            a = self.name_str(True)
+            self.name_str(username=True)
 
     def test_int_valid(self):
         self.assertEqual(self.name_int(age=15), 15)
 
     def test_int_invalid_string(self):
         with self.assertRaises(TypeError):
-            a = self.name_int(age="5")
+            self.name_int(age="5")
