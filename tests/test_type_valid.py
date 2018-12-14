@@ -4,35 +4,32 @@ from type_valid.type_valid import type_valid
 
 class TestTypeValid(unittest.TestCase):
 
-    def test_string_valid(self):
+    def setUp(self):
         @type_valid
-        def name(username: str) -> str:
+        def name_str(username: str) -> str:
             return username
-        self.assertEqual(name(username="myString"), "myString")
+
+        @type_valid
+        def name_int(age: int) -> int:
+            return age
+
+        self.name_str = name_str
+        self.name_int = name_int
+
+    def test_string_valid(self):
+        self.assertEqual(self.name_str(username="myString"), "myString")
 
     def test_string_invalid_int(self):
-        @type_valid
-        def name(username: str) -> str:
-            return username
         with self.assertRaises(TypeError):
-            a = name(1)
+            a = self.name_str(1)
 
     def test_string_invalid_bool(self):
-        @type_valid
-        def name(username: str) -> str:
-            return username
         with self.assertRaises(TypeError):
-            a = name(True)
+            a = self.name_str(True)
 
     def test_int_valid(self):
-        @type_valid
-        def name(age: int) -> int:
-            return age
-        self.assertEqual(name(age=15), 15)
+        self.assertEqual(self.name_int(age=15), 15)
 
     def test_int_invalid_string(self):
-        @type_valid
-        def name(age: int) -> int:
-            return age
         with self.assertRaises(TypeError):
-            a = name(age="5")
+            a = self.name_int(age="5")
