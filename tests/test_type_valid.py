@@ -15,14 +15,14 @@ class TestTypeValid(unittest.TestCase):
         def name(username: str) -> str:
             return username
         with self.assertRaises(TypeError):
-            name(1)
+            a = name(1)
 
     def test_string_invalid_bool(self):
         @type_valid
         def name(username: str) -> str:
             return username
         with self.assertRaises(TypeError):
-            name(True)
+            a = name(True)
 
     def test_int_valid(self):
         @type_valid
@@ -35,4 +35,4 @@ class TestTypeValid(unittest.TestCase):
         def name(age: int) -> int:
             return age
         with self.assertRaises(TypeError):
-            name(age="5")
+            a = name(age="5")

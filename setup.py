@@ -23,3 +23,5 @@ setup(name='type_valid',
 
 # pytest --cov=./type_valid
 # pytest --cov=./type_valid --cov-report html:coverage
+
+# codecov --token=49a3da96-37ad-4e44-8368-08aca320df1c
