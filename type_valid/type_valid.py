@@ -2,6 +2,8 @@ from typing import get_type_hints
 from inspect import getfullargspec
 from functools import wraps
 
+# inspiration from https://aboutsimon.com/blog/2018/04/04/Python3-Type-Checking-And-Data-Validation-With-Type-Hints.html
+
 
 def validate_input(obj, **kwargs):
     hints = get_type_hints(obj)
