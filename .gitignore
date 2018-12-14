@@ -1,0 +1,4 @@
+.idea
+venv
+__pycache__
+type_valid.egg-info
