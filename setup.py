@@ -6,22 +6,19 @@ import os
 dir_path = os.path.abspath(os.path.dirname(__file__))
 readme = io.open(os.path.join(dir_path, 'README.md'), encoding='utf-8').read()
 
+REQUIRES_PYTHON = '>=3.5.0'
+
 setup(name='type_valid',
-      version='0.1.1',
+      version='0.1.2',
       description='Python Type validator with decorators',
       url='https://github.com/edmhs/python-type-valid',
       author='Eduards Marhelis',
       author_email='eduards.marhelis@gmail.com',
       license='MIT',
       long_description=readme,
+      python_requires=REQUIRES_PYTHON,
       zip_safe=False)
 
 
-# python setup.py sdist bdist_wheel
-# twine upload --repository-url https://upload.pypi.org/legacy/ ./dist/*
 
 
-# pytest --cov=./type_valid
-# pytest --cov=./type_valid --cov-report html:coverage
-
-# codecov --token=49a3da96-37ad-4e44-8368-08aca320df1c
