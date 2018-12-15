@@ -7,24 +7,6 @@
 
 Python type validation decorator, validates input and output types
 
-### Todo:
-* Validate input DONE
-* Validate Output DONE
-* Validate input **kwargs ?
-* Validate mandatory **kwargs ?
-* Multiple types ?
-
-### Types examples
-
-~~~
-str ""
-int 4
-float 10.5
-list []
-tuple ()
-...
-~~~
-
 ### Installation
 ~~~sh
 pip install type-valid
@@ -56,4 +38,22 @@ user(name="Bob", age=25, salary=1000.00)
 ### Raises TypeError
 ~~~sh
 TypeError: in method 'hello', Argument 'name' is not of type <class 'str'>, received <class 'int'>
+~~~
+
+### Todo:
+* Validate input DONE
+* Validate Output DONE
+* Validate input **kwargs ?
+* Validate mandatory **kwargs ?
+* Multiple types ?
+
+### Types examples
+
+~~~
+str ""
+int 4
+float 10.5
+list []
+tuple ()
+...
 ~~~

@@ -53,4 +53,4 @@ class TestTypeValid(unittest.TestCase):
 
     def test_multi_invalid(self):
         with self.assertRaises(TypeError):
-            self.multi(name="python", age="15")
+            self.multi(name="python", age="15", salary=100.00)
