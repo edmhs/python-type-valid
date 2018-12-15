@@ -5,8 +5,9 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/edmhs/python-type-valid)
 
 
-Python type validation decorator with hinting
+Python type validation decorator, validates input and output types
 
+### Todo:
 * Validate input DONE
 * Validate Output DONE
 * Validate input **kwargs ?
@@ -21,6 +22,7 @@ int 4
 float 10.5
 list []
 tuple ()
+...
 ~~~
 
 ### Installation
