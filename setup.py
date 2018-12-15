@@ -9,7 +9,7 @@ readme = io.open(os.path.join(dir_path, 'README.md'), encoding='utf-8').read()
 REQUIRES_PYTHON = '>=3.5.0'
 
 setup(name='type_valid',
-      version='0.1.4',
+      version='0.1.5',
       description='Python Type validator with decorators',
       url='https://github.com/edmhs/python-type-valid',
       author='Eduards Marhelis',

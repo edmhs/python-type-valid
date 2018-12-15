@@ -26,12 +26,18 @@ def type_valid(decorator):
                 continue
 
             # validate input
-            if not isinstance(kwargs[attr_name], attr_type):
-                raise TypeError(
-                    'in method %r, Argument %r is not of type %s, received %s'
-                    % (decorator.__name__, attr_name, attr_type,
-                        type(kwargs[attr_name]))
+            try:
+                if not isinstance(kwargs[attr_name], attr_type):
+                    raise TypeError(
+                        'in method %r, Argument %r is not of type %s, received %s'
+                        % (decorator.__name__, attr_name, attr_type,
+                            type(kwargs[attr_name]))
 
+                    )
+            except KeyError:
+                raise TypeError(
+                    'in method %r, Argument %r is required'
+                    % (decorator.__name__, attr_name)
                 )
 
         # process object to get output

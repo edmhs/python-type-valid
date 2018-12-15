@@ -41,6 +41,10 @@ class TestTypeValid(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.name_str(username=True)
 
+    def test_string_missing(self):
+        with self.assertRaises(TypeError):
+            self.name_str()
+
     def test_int_valid(self):
         self.assertEqual(self.name_int(age=15), 15)
 
@@ -55,3 +59,7 @@ class TestTypeValid(unittest.TestCase):
     def test_multi_invalid(self):
         with self.assertRaises(TypeError):
             self.multi(name="python", age="15", salary=100.00)
+
+    def test_multi_missing(self):
+        with self.assertRaises(TypeError):
+            self.multi( salary=100.00)

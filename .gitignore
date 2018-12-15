@@ -7,3 +7,5 @@ type_valid.egg-info
 dist
 coverage
 coverage.xml
+build
+private_notes.txt
