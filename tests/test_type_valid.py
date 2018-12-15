@@ -49,7 +49,8 @@ class TestTypeValid(unittest.TestCase):
             self.name_int(age="5")
 
     def test_multi_valid(self):
-        self.assertEqual(self.multi(name="python", age=15, salary=100.00), "python15100.0")
+        self.assertEqual(self.multi(name="python", age=15, salary=100.00),
+                         "python15100.0")
 
     def test_multi_invalid(self):
         with self.assertRaises(TypeError):

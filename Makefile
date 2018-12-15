@@ -8,6 +8,8 @@ coverage: ## check code coverage quickly with the default Python
 test:
 	python -m unittest -v
 
+lint:
+	pycodestyle type_valid tests
 
 clean:
 	rm -fr build/

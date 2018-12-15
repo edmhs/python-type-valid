@@ -2,8 +2,6 @@ from typing import get_type_hints
 from inspect import getfullargspec
 from functools import wraps
 
-# inspiration from https://aboutsimon.com/blog/2018/04/04/Python3-Type-Checking-And-Data-Validation-With-Type-Hints.html
-
 
 def type_valid(decorator):
     @wraps(decorator)
@@ -30,8 +28,10 @@ def type_valid(decorator):
             # validate input
             if not isinstance(kwargs[attr_name], attr_type):
                 raise TypeError(
-                    'in method %r, Argument %r is not of type %s, received %s' %
-                    (decorator.__name__, attr_name, attr_type, type(kwargs[attr_name]))
+                    'in method %r, Argument %r is not of type %s, received %s'
+                    % (decorator.__name__, attr_name, attr_type,
+                        type(kwargs[attr_name]))
+
                 )
 
         # process object to get output
