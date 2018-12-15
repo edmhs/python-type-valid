@@ -25,3 +25,7 @@ clean:
 	rm -fr htmlcov/
 	rm -fr coverage/
 	rm -fr .pytest_cache
+
+dist: clean
+	python setup.py sdist bdist_wheel
+	twine upload --repository-url https://upload.pypi.org/legacy/ ./dist/*
