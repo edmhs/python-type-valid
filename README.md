@@ -23,8 +23,12 @@ def hello(name: str) -> str:
 #valid
 hello("Bob")
 
-#invalid
-hello(1)
+@type_valid
+def hello_second(name: str) -> int:
+    return name
+
+#invalid output
+hello_second("edds")
 
 @type_valid
 def user(name: str, age: int, salary: float) -> str:
@@ -39,7 +43,7 @@ user(name="Bob", age=25, salary=1000.00)
 ~~~sh
 TypeError: in method 'hello', Argument 'name' is not of type <class 'str'>, received <class 'int'>
 TypeError: in method 'user', Argument 'name' is required
-TypeError: in method 'hello', output 'Bob' is not of type <class 'int'>, received <class 'str'>
+TypeError: in method 'hello_second', output 'edds' is not of type <class 'int'>, received <class 'str'>
 ~~~
 
 ### Todo:
